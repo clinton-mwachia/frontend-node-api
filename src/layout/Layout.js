@@ -1,5 +1,5 @@
 import React from "react";
-import { Header, Content } from "../components/index";
+import { Header, Content, Footer } from "../components/index";
 
 const Layout = () => {
   return (
@@ -9,6 +9,7 @@ const Layout = () => {
         <div className="body flex-grow-1 px-3">
           <Content />
         </div>
+        <Footer />
       </div>
     </div>
   );
