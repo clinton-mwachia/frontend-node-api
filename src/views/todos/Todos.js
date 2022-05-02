@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Axios from "../Axios";
 
 const Todos = () => {
-  Axios.get("/todo").then((res) => res.data);
+  Axios.get("/todo").then((res) => console.log(res.data));
   return (
     <div>
       <Link to="/add/todo">
