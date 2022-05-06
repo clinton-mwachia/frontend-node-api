@@ -42,7 +42,7 @@ const AddTodo = () => {
     setTodo(_todo);
   };
   return (
-    <CContainer>
+    <CContainer className="bg-light">
       <CForm
         className="row g-3 needs-validation"
         noValidate
@@ -140,7 +140,7 @@ const AddTodo = () => {
       </CForm>{" "}
       <CRow>
         <CCol className="align-self-start"></CCol>
-        <CCol className="align-items-center">
+        <CCol className="align-items-center mb-3">
           <Link to="/todos" style={{ textDecoration: "none" }}>
             Back to Todos
           </Link>
