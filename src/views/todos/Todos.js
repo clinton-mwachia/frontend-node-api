@@ -4,11 +4,12 @@ import {
   CContainer,
   CRow,
   CCard,
-  CCardBody,
   CCol,
-  CCardText,
-  CCardTitle,
+  CListGroup,
+  CListGroupItem,
+  CCardHeader,
   CCardFooter,
+  CCardLink,
 } from "@coreui/react";
 import { Link } from "react-router-dom";
 
@@ -21,44 +22,6 @@ const Todos = () => {
   React.useEffect(() => {
     Axios.get("/todo").then((res) => setTodos(res.data));
   }, []);
-  console.log(todos);
-  const data = [
-    {
-      Title: "Card title",
-      Text: "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
-      Footer: "Last updated 3 mins ago",
-    },
-    {
-      Title: "Card title",
-      Text: "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
-      Footer: "Last updated 3 mins ago",
-    },
-    {
-      Title: "Card title",
-      Text: "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
-      Footer: "Last updated 3 mins ago",
-    },
-    {
-      Title: "Card title",
-      Text: "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
-      Footer: "Last updated 3 mins ago",
-    },
-    {
-      Title: "Card title",
-      Text: "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
-      Footer: "Last updated 3 mins ago",
-    },
-    {
-      Title: "Card title",
-      Text: "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
-      Footer: "Last updated 3 mins ago",
-    },
-    {
-      Title: "Card title",
-      Text: "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
-      Footer: "Last updated 3 mins ago",
-    },
-  ];
 
   return (
     <div>
@@ -68,17 +31,42 @@ const Todos = () => {
       <hr />
       <CContainer>
         <CRow xs={{ cols: 1 }} md={{ cols: 3 }} className="g-4">
-          {data.length > 0 ? (
-            data.map((item) => (
-              <CCol xs>
-                <CCard className="h-100">
-                  <CCardBody>
-                    <CCardTitle>{item.Title}</CCardTitle>
-                    <CCardText>{item.Text}</CCardText>
-                  </CCardBody>
-                  <CCardFooter>
-                    <small className="text-medium-emphasis">
-                      {item.Footer}
+          {todos.length > 0 ? (
+            todos.map((item) => (
+              <CCol key={item.id} xs>
+                <CCard className="h-100 border-dark">
+                  <CCardHeader>
+                    Title: <b style={{ color: "darkblue" }}>{item.title}</b>
+                  </CCardHeader>
+                  <CListGroup flush>
+                    <CListGroupItem>
+                      <b>Description: </b>
+                      {item.description}
+                    </CListGroupItem>
+                    <CListGroupItem>
+                      <b>Date Created: </b>
+                      {item.dateCreated}
+                    </CListGroupItem>
+                    <CListGroupItem>
+                      <b>Completion Date: </b>
+                      {item.dateToComplete}
+                    </CListGroupItem>
+                    <CListGroupItem>
+                      <b>Creator: </b>
+                      {item.creator}
+                    </CListGroupItem>
+                    <CListGroupItem>
+                      <b>Organisation: </b>
+                      {item.organisation}
+                    </CListGroupItem>
+                    <CListGroupItem>
+                      <b>Status: </b>
+                      {item.status}
+                    </CListGroupItem>
+                  </CListGroup>
+                  <CCardFooter className="text-medium-emphasis">
+                    <small>
+                      <CCardLink href="#">More</CCardLink>
                     </small>
                   </CCardFooter>
                 </CCard>
