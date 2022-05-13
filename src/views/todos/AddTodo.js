@@ -10,6 +10,8 @@ import {
 } from "@coreui/react";
 import { Link } from "react-router-dom";
 
+import Axios from "../Axios";
+
 const AddTodo = () => {
   let TODO = {
     creator: "",
@@ -30,8 +32,13 @@ const AddTodo = () => {
       event.stopPropagation();
     }
     setValidated(true);
-    console.log(todo);
-    setTodo(TODO);
+    Axios.post("/todo/register", todo)
+      .then((res) => {
+        console.log(res);
+        alert("created successful");
+        setTodo(TODO);
+      })
+      .catch((err) => alert(err));
   };
 
   const onInputChange = (e, name) => {
