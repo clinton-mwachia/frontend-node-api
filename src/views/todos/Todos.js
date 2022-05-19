@@ -9,7 +9,6 @@ import {
   CListGroupItem,
   CCardHeader,
   CCardFooter,
-  CCardLink,
 } from "@coreui/react";
 import { Link } from "react-router-dom";
 
@@ -25,9 +24,11 @@ const Todos = () => {
 
   return (
     <div>
+      <div>
       <Link to="/add/todo">
         <CButton>Add Todo</CButton>
       </Link>
+      </div>
       <hr />
       <CContainer>
         <CRow xs={{ cols: 1 }} md={{ cols: 3 }} className="g-4">
@@ -66,7 +67,7 @@ const Todos = () => {
                   </CListGroup>
                   <CCardFooter className="text-medium-emphasis">
                     <small>
-                      <CCardLink href="#">More</CCardLink>
+                      <Link to="/todo/id">More</Link>
                     </small>
                   </CCardFooter>
                 </CCard>
