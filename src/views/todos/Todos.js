@@ -10,13 +10,14 @@ import {
   CCardHeader,
   CCardFooter,
 } from "@coreui/react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import Axios from "../Axios";
 import NoDataPage from "../pages/NoDataPage";
 
 const Todos = () => {
   const [todos, setTodos] = React.useState([]);
+  const history = useHistory();
 
   React.useEffect(() => {
     Axios.get("/todo").then((res) => setTodos(res.data));
@@ -25,9 +26,9 @@ const Todos = () => {
   return (
     <div>
       <div>
-      <Link to="/add/todo">
-        <CButton>Add Todo</CButton>
-      </Link>
+        <Link to="/add/todo">
+          <CButton>Add Todo</CButton>
+        </Link>
       </div>
       <hr />
       <CContainer>
@@ -67,7 +68,9 @@ const Todos = () => {
                   </CListGroup>
                   <CCardFooter className="text-medium-emphasis">
                     <small>
-                      <Link to="/todo/id">More</Link>
+                      <CButton onClick={() => history.push(`/todo/${item.id}`)}>
+                        More
+                      </CButton>
                     </small>
                   </CCardFooter>
                 </CCard>
