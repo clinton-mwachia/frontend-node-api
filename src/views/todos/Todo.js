@@ -76,7 +76,7 @@ const Todo = () => {
   return (
     <div>
       <h4>Todo</h4>
-      <Link to="/todos">Back To Todos</Link>
+      <Link to="/todos">Back To Projects</Link>
       <hr />
       <CContainer className="bg-light border rounded">
         <CForm className="row g-3 needs-validation" noValidate>
