@@ -27,7 +27,7 @@ const Todos = () => {
     <div>
       <div>
         <Link to="/add/todo">
-          <CButton>Add Todo</CButton>
+          <CButton>Add Project</CButton>
         </Link>
       </div>
       <hr />

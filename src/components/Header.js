@@ -18,7 +18,7 @@ const Header = () => {
     <CHeader position="sticky" className="mb-4">
       <CContainer fluid>
         <CHeaderBrand>
-          <h5>TODO APP</h5>
+          <h5>Projects APP</h5>
         </CHeaderBrand>
         <CCol lg={4} sm={7}>
           <CForm className="d-flex">
@@ -41,7 +41,7 @@ const Header = () => {
           <CHeaderNav>
             <CNavItem>
               <CNavLink component={NavLink} to="/todos">
-                My Todos
+                My Projects
               </CNavLink>
             </CNavItem>
             <CNavItem>

@@ -141,7 +141,7 @@ const AddTodo = () => {
         </CCol>
         <CCol xs={12} className="position-relative">
           <CButton color="primary" type="submit">
-            Submit form
+            Add Project
           </CButton>
         </CCol>
       </CForm>{" "}
@@ -149,7 +149,7 @@ const AddTodo = () => {
         <CCol className="align-self-start"></CCol>
         <CCol className="align-items-center mb-3">
           <Link to="/todos" style={{ textDecoration: "none" }}>
-            Back to Todos
+            Back to Projects
           </Link>
         </CCol>
         <CCol className="align-self-end"></CCol>
