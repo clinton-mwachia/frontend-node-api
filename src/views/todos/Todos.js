@@ -20,7 +20,9 @@ const Todos = () => {
   const history = useHistory();
 
   React.useEffect(() => {
-    Axios.get("/todo").then((res) => setTodos(res.data));
+    Axios.get("/todo").then((res) => {
+      setTodos(res.data);
+    });
   }, []);
 
   return (

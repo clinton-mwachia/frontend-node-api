@@ -3,6 +3,7 @@ import { HashRouter, Route, Switch } from "react-router-dom";
 import { CSpinner } from "@coreui/react";
 
 const Layout = React.lazy(() => import("./layout/Layout"));
+const Login = React.lazy(() => import("./views/pages/Login"));
 
 const loading = (
   <div>
@@ -19,6 +20,12 @@ function App() {
     <HashRouter>
       <Suspense fallback={loading}>
         <Switch>
+          <Route
+            exact
+            path="/login"
+            name="Login"
+            render={(props) => <Login {...props} />}
+          />
           <Route
             path="/"
             name="Home"
