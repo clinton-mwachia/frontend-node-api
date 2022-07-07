@@ -27,15 +27,11 @@ const Content = () => {
                   path={route.path}
                   exact={route.exact}
                   name={route.name}
-                  render={(props) =>
-                    localStorage.getItem("token") ? (
-                      <>
-                        <route.component {...props} />
-                      </>
-                    ) : (
-                      <Redirect to="/login" />
-                    )
-                  }
+                  render={(props) => (
+                    <>
+                      <route.component {...props} />
+                    </>
+                  )}
                 />
               )
             );
